@@ -1,4 +1,6 @@
 # desafio-ransomware
+#conteudos de pesquisas iniciai 
+----------------------------------
 from cryptography.fernet import Fernet
 
 # gerar chave para criptografar o arquivo
@@ -16,6 +18,7 @@ decrypted = fernet.decrypt(encrypted)
 with open('arquivo.txt', 'wb') as file:
     file.write(decrypted)
 
+# Exemplo 1 
 
 import os
 import pyaes
@@ -39,3 +42,16 @@ new_file = "teste.txt"
 new_file = open(f'{new_file}', "wb")
 new_file.write(decrypt_data)
 new_file.close()
+
+# exemplo 2 
+
+from simplecrypt import encrypt, decrypt
+
+passkey = 'wow'
+str1 = 'I am okay'
+cipher = encrypt(passkey, str1)
+print(cipher)
+
+# descriptografar o texto cifrado
+plain = decrypt(passkey, cipher)
+print(plain)
